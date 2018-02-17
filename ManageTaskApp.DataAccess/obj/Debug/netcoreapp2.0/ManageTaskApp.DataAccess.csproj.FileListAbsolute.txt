@@ -1,0 +1,11 @@
+E:\ManageAppDemo\ManageTaskApp\ManageTaskApp.DataAccess\bin\Debug\netcoreapp2.0\ManageTaskApp.DataAccess.deps.json
+E:\ManageAppDemo\ManageTaskApp\ManageTaskApp.DataAccess\bin\Debug\netcoreapp2.0\ManageTaskApp.DataAccess.dll
+E:\ManageAppDemo\ManageTaskApp\ManageTaskApp.DataAccess\bin\Debug\netcoreapp2.0\ManageTaskApp.DataAccess.pdb
+E:\ManageAppDemo\ManageTaskApp\ManageTaskApp.DataAccess\bin\Debug\netcoreapp2.0\ManageTaskApp.ViewModel.dll
+E:\ManageAppDemo\ManageTaskApp\ManageTaskApp.DataAccess\bin\Debug\netcoreapp2.0\ManageTaskApp.ViewModel.pdb
+E:\ManageAppDemo\ManageTaskApp\ManageTaskApp.DataAccess\obj\Debug\netcoreapp2.0\ManageTaskApp.DataAccess.csprojResolveAssemblyReference.cache
+E:\ManageAppDemo\ManageTaskApp\ManageTaskApp.DataAccess\obj\Debug\netcoreapp2.0\ManageTaskApp.DataAccess.csproj.CoreCompileInputs.cache
+E:\ManageAppDemo\ManageTaskApp\ManageTaskApp.DataAccess\obj\Debug\netcoreapp2.0\ManageTaskApp.DataAccess.AssemblyInfoInputs.cache
+E:\ManageAppDemo\ManageTaskApp\ManageTaskApp.DataAccess\obj\Debug\netcoreapp2.0\ManageTaskApp.DataAccess.AssemblyInfo.cs
+E:\ManageAppDemo\ManageTaskApp\ManageTaskApp.DataAccess\obj\Debug\netcoreapp2.0\ManageTaskApp.DataAccess.dll
+E:\ManageAppDemo\ManageTaskApp\ManageTaskApp.DataAccess\obj\Debug\netcoreapp2.0\ManageTaskApp.DataAccess.pdb
