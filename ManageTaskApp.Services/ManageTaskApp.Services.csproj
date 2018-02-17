@@ -1,0 +1,10 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ManageTaskApp.Common\ManageTaskApp.Common.csproj" />
+    <ProjectReference Include="..\ManageTaskApp.DataAccess\ManageTaskApp.DataAccess.csproj" />
+    <ProjectReference Include="..\ManageTaskApp.ViewModel\ManageTaskApp.ViewModel.csproj" />
+  </ItemGroup>
+</Project>

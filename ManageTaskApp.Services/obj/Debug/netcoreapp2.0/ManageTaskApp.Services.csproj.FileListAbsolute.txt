@@ -1,0 +1,15 @@
+E:\ManageAppDemo\ManageTaskApp\ManageTaskApp.Services\bin\Debug\netcoreapp2.0\ManageTaskApp.Services.deps.json
+E:\ManageAppDemo\ManageTaskApp\ManageTaskApp.Services\bin\Debug\netcoreapp2.0\ManageTaskApp.Services.dll
+E:\ManageAppDemo\ManageTaskApp\ManageTaskApp.Services\bin\Debug\netcoreapp2.0\ManageTaskApp.Services.pdb
+E:\ManageAppDemo\ManageTaskApp\ManageTaskApp.Services\bin\Debug\netcoreapp2.0\ManageTaskApp.Common.dll
+E:\ManageAppDemo\ManageTaskApp\ManageTaskApp.Services\bin\Debug\netcoreapp2.0\ManageTaskApp.DataAccess.dll
+E:\ManageAppDemo\ManageTaskApp\ManageTaskApp.Services\bin\Debug\netcoreapp2.0\ManageTaskApp.ViewModel.dll
+E:\ManageAppDemo\ManageTaskApp\ManageTaskApp.Services\bin\Debug\netcoreapp2.0\ManageTaskApp.Common.pdb
+E:\ManageAppDemo\ManageTaskApp\ManageTaskApp.Services\bin\Debug\netcoreapp2.0\ManageTaskApp.DataAccess.pdb
+E:\ManageAppDemo\ManageTaskApp\ManageTaskApp.Services\bin\Debug\netcoreapp2.0\ManageTaskApp.ViewModel.pdb
+E:\ManageAppDemo\ManageTaskApp\ManageTaskApp.Services\obj\Debug\netcoreapp2.0\ManageTaskApp.Services.csprojResolveAssemblyReference.cache
+E:\ManageAppDemo\ManageTaskApp\ManageTaskApp.Services\obj\Debug\netcoreapp2.0\ManageTaskApp.Services.csproj.CoreCompileInputs.cache
+E:\ManageAppDemo\ManageTaskApp\ManageTaskApp.Services\obj\Debug\netcoreapp2.0\ManageTaskApp.Services.AssemblyInfoInputs.cache
+E:\ManageAppDemo\ManageTaskApp\ManageTaskApp.Services\obj\Debug\netcoreapp2.0\ManageTaskApp.Services.AssemblyInfo.cs
+E:\ManageAppDemo\ManageTaskApp\ManageTaskApp.Services\obj\Debug\netcoreapp2.0\ManageTaskApp.Services.dll
+E:\ManageAppDemo\ManageTaskApp\ManageTaskApp.Services\obj\Debug\netcoreapp2.0\ManageTaskApp.Services.pdb
