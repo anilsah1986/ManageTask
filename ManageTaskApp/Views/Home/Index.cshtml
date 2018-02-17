@@ -1,0 +1,232 @@
+﻿<html>
+<head>
+    <title>Manage Task Application</title>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function () {
+            getTaskList();
+        });
+        var Task = {
+            id: 0,
+            name: "",
+            priority: "",
+            date: "",
+            estimatedcost: "",
+            description: ""
+        }
+        function getTaskList() {
+            $.ajax({
+                url: '/api/task/GetAll',
+                type: 'GET',
+                dataType: 'json',
+                success: function (data) {
+                    taskListSuccess(data.data.tasklist);
+                },
+                error: function (request, message, error) {
+                    handleException(request, message, error);
+                }
+            });
+        }
+        function taskListSuccess(data) {
+            $("#taskTable tbody").remove();
+            $.each(data, function (index, task) {
+                taskAddRow(task);
+            });
+        }
+
+        function taskAddRow(task) {
+            if ($("#taskTable tbody").length == 0) {
+                $("#taskTable").append("<tbody></tbody>");
+            }
+            $("#taskTable tbody").append(
+                taskBuildTableRow(task));
+        }
+
+        function taskBuildTableRow(task) {
+            debugger;
+            var newRow = "<tr><td>" + task.Id + "</td>" +
+                "<td><input class='input-name' type='text' value='" + task.Name + "'/></td>" +
+                "<td><input class='input-priority' type='text' value='" + task.Priority + "'/></td>" +
+                "<td><input class='input-date' type='text' value='" + task.Date + "'/></td>" +
+                "<td><input class='input-estimatedcost' type='text' value='" + task.EstimatedCost + "'/></td>" +
+                "<td><input class='input-description' type='text' value='" + task.Description + "'/></td>" +
+                "<td>" +
+                "<button type='button' onclick='taskUpdate(this);' class='btn btn-default' " +
+                "data-id='" + task.Id + "' data-name='" + task.Name + "' data-priority='" + task.Priority + "' " +
+                "data-date='" + task.Date + "' data-estimatedcost='" + task.EstimatedCost + "' " +
+                "data-description='" + task.Description + "'><span class='glyphicon glyphicon-edit' />Update</button>" +
+                "<button type='button' onclick='taskDelete(this);' class='btn btn-default' data-id='" + task.Id + "'><span class='glyphicon glyphicon-remove' />Delete</button>" +
+                "</td></tr>";
+            return newRow;
+        }
+        function isDate(txtDate) {
+            var currVal = txtDate;
+            if (currVal == '')
+                return false;
+            var rxDatePattern = /^(\d{1,2})(\/|-)(\d{1,2})(\/|-)(\d{4})$/;
+            var dtArray = currVal.match(rxDatePattern); // is format OK?
+            if (dtArray == null)
+                return false;
+            dtMonth = dtArray[1];
+            dtDay = dtArray[3];
+            dtYear = dtArray[5];
+            if (dtMonth < 1 || dtMonth > 12)
+                return false;
+            else if (dtDay < 1 || dtDay > 31)
+                return false;
+            else if ((dtMonth == 4 || dtMonth == 6 || dtMonth == 9 || dtMonth == 11) && dtDay == 31)
+                return false;
+            else if (dtMonth == 2) {
+                var isleap = (dtYear % 4 == 0 && (dtYear % 100 != 0 || dtYear % 400 == 0));
+                if (dtDay > 29 || (dtDay == 29 && !isleap))
+                    return false;
+            }
+            return true;
+        }
+
+        function onAddTask(item) {
+            debugger;
+            if ($("#name").val() == "") {
+                alert("Please enter name!");
+                return false;
+            }
+            if ($("#priority").val() == "") {
+                alert("Please select priority!");
+                return false;
+            }
+            if ($("#date").val() == "") {
+                alert("Please enter date!");
+                return false;
+            }
+            if (!isDate($("#date").val())) {
+                alert('Invalid Date');
+            }
+            if ($("#estimatedcost").val() == "") {
+                alert("Please enter estimation cost!");
+                return false;
+            }
+            if ($("#description").val() == "") {
+                alert("Please enter description!");
+                return false;
+            }
+            var options = {};
+            options.url = "/api/task/Create";
+            options.type = "POST";
+            var obj = Task;
+            obj.name = $("#name").val();
+            obj.priority = $("#priority").val();
+            obj.date = $("#date").val();
+            obj.estimatedcost = $("#estimatedcost").val();
+            obj.description = $("#description").val();
+            console.dir(obj);
+            options.data = JSON.stringify(obj);
+            options.contentType = "application/json";
+            options.dataType = "html";
+            options.success = function (msg) {
+                getTaskList();
+                $("#msg").html(msg);
+                $("#name").val("");
+                $("#priority").val($("#priority option:first").val());
+                $("#date").val("");
+                $("#estimatedcost").val("");
+                $("#description").val("");
+            },
+                options.error = function () {
+                    $("#msg").html("Error while calling the Web API!");
+                };
+            $.ajax(options);
+        }
+
+        function taskUpdate(item) {
+            debugger;
+            var id = $(item).data("id");
+            var options = {};
+            options.url = "/api/task/Update"
+            options.type = "POST";
+
+            var obj = Task;
+            obj.id = $(item).data("id");
+            obj.name = $(".input-name", $(item).parent().parent()).val();
+            obj.priority = $(".input-priority", $(item).parent().parent()).val();
+            obj.date = $(".input-date", $(item).parent().parent()).val();
+            obj.EstimatedCost = $(".input-EstimatedCost", $(item).parent().parent()).val();
+            obj.Description = $(".input-Description", $(item).parent().parent()).val();
+            console.dir(obj);
+            options.data = JSON.stringify(obj);
+            options.contentType = "application/json";
+            options.dataType = "html";
+            options.success = function (msg) {
+                $("#msg").html(msg);
+            };
+            options.error = function () {
+                $("#msg").html("Error while calling the Web API!");
+            };
+            $.ajax(options);
+        }
+
+        function taskDelete(item) {
+            debugger;
+            var id = $(item).data("id");
+            var options = {};
+            options.url = "/api/task/Delete?id=" + id;
+            options.type = "POST";
+            options.dataType = "html";
+            options.success = function (msg) {
+                console.log('msg= ' + msg);
+                $("#msg").html(msg);
+                getTaskList();
+            };
+            options.error = function () {
+                $("#msg").html("Error while calling the Web API!");
+            };
+            $.ajax(options);
+        }
+
+        function handleException(request, message, error) {
+            var msg = "";
+            msg += "Code: " + request.status + "\n";
+            msg += "Text: " + request.statusText + "\n";
+            if (request.responseJSON != null) {
+                msg += "Message" + request.responseJSON.Message + "\n";
+            }
+            alert(msg);
+        }
+    </script>
+</head>
+<body>
+    <h3>Task Manager</h3>
+    <form>
+        <table id="taskTable" style="border: 1px solid #999" cellpadding="1">
+            <thead>
+                <tr>
+                    <td>Id</td>
+                    <td>Name</td>
+                    <td>Priority</td>
+                    <td>Date</td>
+                    <td>EstimatedCost</td>
+                    <td>Description</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td><input id="name" type="text" placeholder="Enter name" /></td>
+                    <td>
+                        <select id="priority" style="width:173px">
+                            <option value="">Select Priority</option>
+                            <option value="P1">P1</option>
+                            <option value="P2">P2</option>
+                            <option value="P3">P3</option>
+                        </select>
+                    </td>
+                    <td><input id="date" type="text"  placeholder="i.e. mm/dd/yyyy "/></td>
+                    <td><input id="estimatedcost" type="text"  placeholder="Enter estimated cost" /></td>
+                    <td><input id="description" type="text"  placeholder="Enter description" /></td>
+                    <td><input type="button" id="insert" value="Insert" onclick='onAddTask(this)' /></td>
+                </tr>
+            </thead>
+        </table>
+        <br />
+        <div id="msg"></div>
+    </form>
+</body>
+</html> 
