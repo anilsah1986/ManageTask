@@ -1,0 +1,9 @@
+E:\ManageAppDemo\ManageTaskApp\ManageTaskApp.Common\bin\Debug\netcoreapp2.0\ManageTaskApp.Common.deps.json
+E:\ManageAppDemo\ManageTaskApp\ManageTaskApp.Common\bin\Debug\netcoreapp2.0\ManageTaskApp.Common.dll
+E:\ManageAppDemo\ManageTaskApp\ManageTaskApp.Common\bin\Debug\netcoreapp2.0\ManageTaskApp.Common.pdb
+E:\ManageAppDemo\ManageTaskApp\ManageTaskApp.Common\obj\Debug\netcoreapp2.0\ManageTaskApp.Common.csprojResolveAssemblyReference.cache
+E:\ManageAppDemo\ManageTaskApp\ManageTaskApp.Common\obj\Debug\netcoreapp2.0\ManageTaskApp.Common.csproj.CoreCompileInputs.cache
+E:\ManageAppDemo\ManageTaskApp\ManageTaskApp.Common\obj\Debug\netcoreapp2.0\ManageTaskApp.Common.AssemblyInfoInputs.cache
+E:\ManageAppDemo\ManageTaskApp\ManageTaskApp.Common\obj\Debug\netcoreapp2.0\ManageTaskApp.Common.AssemblyInfo.cs
+E:\ManageAppDemo\ManageTaskApp\ManageTaskApp.Common\obj\Debug\netcoreapp2.0\ManageTaskApp.Common.dll
+E:\ManageAppDemo\ManageTaskApp\ManageTaskApp.Common\obj\Debug\netcoreapp2.0\ManageTaskApp.Common.pdb
